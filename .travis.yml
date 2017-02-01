@@ -6,4 +6,4 @@ services:
         - docker
 
 script:
-        - echo Hello world > /tmp/hw
+        - docker build -t build/yocto_rpi3 . 

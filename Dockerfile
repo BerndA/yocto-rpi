@@ -2,7 +2,7 @@ FROM debian:jessie
 
 ADD . /opt/yocto
 
-RUN apt-get update && apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+RUN apt-get update && apt-get -y install gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python-pexpect
 
 RUN whoami

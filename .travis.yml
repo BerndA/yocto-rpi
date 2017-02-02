@@ -1,0 +1,10 @@
+language: bash
+
+sudo: required
+
+services:
+        - docker
+
+script:
+        - docker build -t build/yocto-rpi3 . 
+        - docker run --rm build/yocto-rpi3

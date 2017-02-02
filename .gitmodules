@@ -3,6 +3,6 @@
 	url = git://git.yoctoproject.org/poky.git
 	branch = morty
 [submodule "meta-raspberrypi"]
-	path = layers/meta-raspberrypi
+	path = meta-raspberrypi
 	url = http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi
 	branch = morty

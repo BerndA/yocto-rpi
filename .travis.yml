@@ -1,13 +1,11 @@
 language: bash
-
 sudo: false
 
 git: 
-        - depth 3
+  depth: 3
 
 addons:
-  apt:
-    packages:
+  apt_packages:
     - bash 
     - gawk 
     - wget 

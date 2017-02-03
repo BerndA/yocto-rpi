@@ -8,4 +8,4 @@ services:
 script:
         - docker build -t build/yocto-rpi3 . 
         - mkdir -p build
-        - docker run --rm --name builder -v ./build:/home/yocto_build/work build/yocto-rpi3 /bin/bash -c 'source yocto/oe-init-build-env ./work && bitbake core-image-minimal'
+        - docker run --rm --name builder -v ~/build:/home/yocto_build/work build/yocto-rpi3 /bin/bash -c 'source yocto/oe-init-build-env ./work && bitbake core-image-minimal'

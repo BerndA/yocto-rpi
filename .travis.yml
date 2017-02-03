@@ -1,11 +1,33 @@
 language: bash
 
-sudo: required
+sudo: false
 
-services:
-        - docker
+git: 
+        - depth 3
 
+addons:
+  apt:
+    packages:
+    - bash 
+    - gawk 
+    - wget 
+    - git-core 
+    - diffstat 
+    - unzip 
+    - texinfo 
+    - gcc-multilib
+    - build-essential
+    - chrpath 
+    - socat 
+    - cpio 
+    - python 
+    - python3 
+    - python3-pip 
+    - python-pexpect 
+    - locale  
+    
+install: 
+       - echo 1
+    
 script:
-        - docker build -t build/yocto-rpi3 . 
-        - mkdir -p build
-        - docker run --rm --name builder -v ~/build:/home/yocto_build/work build/yocto-rpi3 /bin/bash -c 'source yocto/oe-init-build-env ./work && bitbake core-image-minimal'
+      - /bin/bash -c 'source yocto/oe-init-build-env ./work && bitbake core-image-minimal'

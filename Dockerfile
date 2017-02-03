@@ -9,8 +9,7 @@ ADD . /home/yocto_build/
 
 ENV LOCALE="en_US.UTF-8"
 
-RUN [ "echo", "${LOCALE}", " > /etc/locale.gen" ]
-RUN [ "locale-gen" ]
+RUN echo ${LOCALE} > /etc/locale.gen && locale-gen
 RUN locale -a && cat /etc/locale.gen 
 
 ENV LANG=${LOCALE}

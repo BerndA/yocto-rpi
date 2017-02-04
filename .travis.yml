@@ -1,7 +1,6 @@
 language: python 
 
-python: 
-    -3.4
+python: 3.4
 
 sudo: false
 
@@ -22,7 +21,6 @@ addons:
     - chrpath 
     - socat 
     - cpio  
-    - python-pexpect 
     - locales 
     
 install:

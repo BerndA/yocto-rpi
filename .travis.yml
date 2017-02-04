@@ -1,4 +1,8 @@
-language: bash
+language: python 
+
+python: 
+    -"3.4"
+
 sudo: false
 
 git: 
@@ -17,14 +21,12 @@ addons:
     - build-essential
     - chrpath 
     - socat 
-    - cpio 
-    - python 
-    - python3
+    - cpio  
     - python-pexpect 
     - locales 
     
-install: 
-       - echo 1
+install:
+    - pip install pexpect       
     
 script:
       - /bin/bash -c 'source yocto/oe-init-build-env ./work && bitbake core-image-minimal'

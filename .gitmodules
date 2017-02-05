@@ -4,5 +4,5 @@
 	branch = morty
 [submodule "meta-raspberrypi"]
 	path = meta-raspberrypi
-	url = http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi
+	url = git://git.yoctoproject.org/meta-raspberrypi
 	branch = morty

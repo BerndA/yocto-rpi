@@ -6,6 +6,15 @@ sudo: false
 git: 
   depth: 3
 
+cache:
+        directories:
+                - $HOME/build/sstate-cache
+
+env:
+        - TRAVIS_BB_TARGET=rpi-basic-image
+        - TRAVIS_BB_TARGET=gcc-cross-initial-arm
+        - TRAVIS_BB_TARGET=gzip-native
+
 addons:
   apt_packages:
     - bash 
@@ -26,4 +35,4 @@ install:
     - pip install pexpect       
     
 script:
-      - /bin/bash -c 'source yocto/oe-init-build-env ./work && bitbake core-image-minimal'
+      - /bin/bash -c 'source yocto/oe-init-build-env ./build && bitbake -q ${TRAVIS_BB_TARGET}'

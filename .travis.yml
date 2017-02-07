@@ -33,7 +33,7 @@ addons:
     
 install:
     - pip install pexpect
-    - mkdir -p tar && cd tar && wget  http://ftp.gnu.org/gnu/tar/tar-latest.tar.bz2 -O - | tar xj --strip=1 && ./configure -q --prefix=$HOME && make -j4 && make install
-    
-    script:
+    - mkdir -p tar && cd tar && wget  http://ftp.gnu.org/gnu/tar/tar-latest.tar.bz2 -O - | tar xj --strip=1 && ./configure -q --prefix=$HOME && make -j4 && make
+
+script:
       - /bin/bash -c 'export PATH=$HOME/bin:$PATH; source yocto/oe-init-build-env ./build && bitbake -q ${TRAVIS_BB_TARGET}'

@@ -35,5 +35,8 @@ install:
     - pip install pexpect
     - mkdir -p tar && cd tar && wget  http://ftp.gnu.org/gnu/tar/tar-latest.tar.bz2 -O - | tar xj --strip=1 && ./configure -q --prefix=$HOME && make -j4 && make
 
-script:
+script:       
+      - export PATH=$HOME/bin:$PATH
+      - which tar
+      - tar --version
       - /bin/bash -c 'export PATH=$HOME/bin:$PATH; cd $TRAVIS_BUILD_DIR; source yocto/oe-init-build-env ./build && bitbake -q ${TRAVIS_BB_TARGET}'

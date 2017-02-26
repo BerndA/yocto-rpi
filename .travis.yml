@@ -1,7 +1,8 @@
 language: python 
 
 python: 2.7
-sudo: false
+#sudo: false
+sudo: required
 
 git: 
   depth: 3

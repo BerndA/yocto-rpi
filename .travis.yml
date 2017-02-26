@@ -14,6 +14,7 @@ cache:
 env:
         - TRAVIS_BB_TARGET=gzip-native
         - TRAVIS_BB_TARGET=gcc-cross-initial-arm
+        - TRAVIS_BB_TARGET=core-image-minimal 
         - TRAVIS_BB_TARGET=rpi-basic-image 
 
 addons:

@@ -5,16 +5,16 @@ python: 2.7
 sudo: required
 
 git: 
-  depth: 3
+  depth: 2
 
 cache:
         directories:
                 - $HOME/build/sstate-cache
 
 env:
-        - TRAVIS_BB_TARGET=rpi-basic-image 
-        - TRAVIS_BB_TARGET=gcc-cross-initial-arm
         - TRAVIS_BB_TARGET=gzip-native
+        - TRAVIS_BB_TARGET=gcc-cross-initial-arm
+        - TRAVIS_BB_TARGET=rpi-basic-image 
 
 addons:
   apt_packages:
